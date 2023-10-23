@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery_style.css">
+</head>
+<body>
+    <div class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="gallery-item">
+            <img src="images/evil.png" alt="Picture 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/glass.png">
+        </div>
+        <div class="gallery-item">
+            <img src="images/lake house(2).jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="images/untitled.jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="images/untitled.png">
+        </div>
+        <!-- <div class="gallery-item">
+            <img src="https://www.instagram.com/p/Cggm1qNP3l9/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==">
+        </div> -->
+        <div class="gallery-item">
+            <video controls>
+                <source src="images/EVEE16SAM0085-0550.mkv" type="video/mp4">
+                <!-- Your browser does not support the video tag. -->
+            </video>
+        </div>
+        <!-- Add more pictures and videos as needed -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img id="modalContent" class="modal-content">
+            <a class="prev" id="prevArrow">&#10094;</a>
+            <a class="next" id="nextArrow">&#10095;</a>
+        </div>
+
+    </div>
+    <script async defer src="galleryscript.js"></script>
+</body>
+</html>
+

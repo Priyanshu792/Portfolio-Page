@@ -1,0 +1,116 @@
+body{
+    background-color: #061821;
+}
+
+header {
+    background-color: #03141c;
+    color: aliceblue;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.blur{
+    transform: translateX(-20rem);
+    /* transform: translatey(-rem); */
+    position: absolute;
+    box-shadow: 0 0 1000px 50px blue;
+    z-index: -100;
+}
+
+.gallery-item {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    display: block;
+}
+
+.gallery-item video {
+    max-height: 300px;
+}
+.gallery-item:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+/* Styles for making the modal responsive */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.2);
+}
