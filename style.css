@@ -319,7 +319,7 @@ section .header{
 footer {
     position: relative;
     background-color: #03141c;
-    color: aliceblue;
+    /* color: aliceblue; */
     padding: 3rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -332,33 +332,105 @@ footer .blur {
     z-index: -100;
 }
 
-footer .column {
+footer .column p{
     flex: 1;
-    text-align: center; /* Center-align the content in each column */
+    color: aliceblue;
+    margin-bottom: 2rem;
+    /* text-align: center; Center-align the content in each column */
 }
 
-footer h4 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+footer .column .logo{
+    max-width: 100px;
+    margin-bottom: 2rem;
 }
 
-footer p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-footer .socials {
+footer .column .socials{
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-footer .socials a {
+footer .column .socials a {
     color: azure;
-    font-size: 1.5rem;
-    text-decoration: none;
+    border: 1px solid aliceblue;
+    padding: 5px 10px;
+    font-size: 1.25rem;
+    /* border-radius: 100%; */
+    transition: all 0.3s ease;
+    /* text-decoration: none; */
 }
 
-footer .socials a:hover {
-    color: #78a3b8;
+footer .column .socials a:hover{
+    display: flex;
+    color: aliceblue;
+    background-color: blue;
+    border-color: aliceblue;
+    gap: 1rem;
+}
+
+footer .column h4 {
+    color: aliceblue;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+footer .column > a{
+    display: block;
+    color: aliceblue;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+footer .column > a:hover{
+    color: blue;
+}
+
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    color: aliceblue;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (width < 800px){
+    /* .nav-links{
+        display: none;
+        grid-template-columns: repeat(2,1fr);
+    } */
+    header{
+        grid-template-columns: repeat(1,1fr);
+    }
+    header .image{
+        grid-area: 1/1/2/2;
+    }
+    .features{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .pricing{
+        grid-template-columns: repeat(2,1fr);
+    }
+    footer{
+        grid-template-columns: 1fr 200px;
+    }
+}
+
+@media(width < 600px){
+    .nav-links{
+        display: none;
+    }
+    header .image::before{
+        display: none;
+    }
+    .features{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .pricing{
+        grid-template-columns: repeat(1,1fr);
+    }
+    footer{
+        grid-template-columns: 1fr 150px;
+    }
 }
