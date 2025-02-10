@@ -1,12 +1,87 @@
 body{
-    background-color: #061821;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    background-image: url('images/cyberpunk-pattern.png'); /* Add a cyberpunk background pattern */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+nav{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-logo{
+    max-width: 100px;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.45rem;
+    color: #e0e0e0;
+}
+
+.link a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ff00ff;
+    transition: all 0.3s ease;
+}
+
+.link a:hover::after{
+    width: 100%;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff00ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:all 0.3s ease
+}
+
+.btn:hover{
+    background-color: #ff1493;
 }
 
 header {
-    background-color: #03141c;
-    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #e0e0e0;
     padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
@@ -14,56 +89,57 @@ header h1 {
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 80px auto 0; /* Add top margin to account for fixed nav */
+    padding: 2rem 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    overflow: hidden;
+    align-content: start;
     justify-content: center;
     align-items: center;
+    justify-content: center;
     justify-items: center;
 }
 
 .blur{
     transform: translateX(-20rem);
-    /* transform: translatey(-rem); */
     position: absolute;
-    box-shadow: 0 0 1000px 50px blue;
+    box-shadow: 0 0 1000px 50px #ff00ff;
     z-index: -100;
 }
 
 .gallery-item {
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    /* Removed border property */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow: hidden;
-
-    width: 100%; /* Set fixed width */
-    height: 0; /* Set initial height to 0 */
-    /* padding-bottom: 56.25%; 16:9 aspect ratio (9 / 16 * 100) */
-    padding-bottom: 100%; /* 16:9 aspect ratio (9 / 16 * 100) */
-    position: relative; /* Needed for absolutely positioned elements */
-    
 }
 
-.gallery-item img,.gallery-item video {
+.gallery-item img, .gallery-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 .gallery-item video {
     max-height: 300px;
 }
+
 .gallery-item:hover {
-    transform: scale(1.03);
-    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    filter: brightness(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .modal {
@@ -96,7 +172,6 @@ header h1 {
     color: white;
 }
 
-/* Styles for making the modal responsive */
 @media screen and (max-width: 600px) {
     .modal-content {
         width: 100%;
@@ -124,4 +199,76 @@ header h1 {
 
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.2);
+}
+
+/* Add responsive padding for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 2rem;
+    }
+    
+    .container {
+        padding: 1rem 2rem;
+        margin-top: 60px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none; /* Consider adding a mobile menu */
+    }
+}
+
+@media (max-width: 768px) {
+    nav,
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav,
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Video item styling */
+.gallery-item.video-item {
+    aspect-ratio: 16/9;
+    background: var(--card-bg);
+}
+
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.gallery-item.video-item:hover video {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Video controls styling */
+.gallery-item video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item video::-webkit-media-controls-panel {
+    display: flex !important;
+    opacity: 1 !important;
 }
