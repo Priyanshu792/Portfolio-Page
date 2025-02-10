@@ -2,271 +2,275 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Priyanshu's Portfolio - Software Engineer & CG Artist">
     <title>Priyanshu's Portfolio</title>
+    <link rel="preload" href="images/cyberpunk-pattern.png" as="image">
+    <link rel="preload" href="images/Portrait.JPG" as="image">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="shortcut icon" href="images/logo_image.jpg" type="image/x-icon">
 </head>
 <body>
-    <nav>
-        <div class="nav-logo">
-            <a href="#">
-                <img src="images\logo_image.jpg">
-            </a>
-        </div>
-    
-        <ul class="nav-links">
-            <li class="link"><a href="#">Home</a></li>
-            <li class="link"><a href="gallery.html">Gallery</a></li>
-            <li id="link1" class="link"><a href="#">Features</a></li>
-            <li id="link2" class="link"><a href="#">Pricing</a></li>
-            <li id="link3" class="link"><a href="#">Find me</a></li>
-        </ul>
-        <button class="btn">Hire me</button>
-    </nav>
-    
-    <header class="container header-container">
-        <div class="content">
-            <div class="text-content">
-                <h1 class="glitch-text">Hello World_</h1>
-                <h2 class="dynamic-text">I'm <span class="highlight">Priyanshu</span></h2>
-                <div class="typing-text">
-                    <span class="text first-text">A</span>
-                    <span class="text sec-text">Software Engineer</span>
+    <div class="page-wrapper">
+        <nav>
+            <div class="container nav-inner">
+                <div class="nav-logo">
+                    <a href="#">
+                        <img src="images/logo_image.jpg" loading="eager" alt="Logo">
+                    </a>
                 </div>
-                <p class="bio">
-                    Crafting digital experiences through code and creativity. 
-                    Specializing in 3D art and software development, I transform ideas into 
-                    visually stunning and technically sophisticated solutions.
-                </p>
-                <div class="cta-buttons">
-                    <button class="btn primary">View Projects</button>
-                    <button class="btn secondary">Contact Me</button>
-                </div>
+            
+                <ul class="nav-links">
+                    <li class="link"><a href="#">Home</a></li>
+                    <li class="link"><a href="gallery.html">Gallery</a></li>
+                    <li id="link1" class="link"><a href="#">Features</a></li>
+                    <li id="link2" class="link"><a href="#">Pricing</a></li>
+                    <li id="link3" class="link"><a href="#">Find me</a></li>
+                </ul>
+                <button class="btn">Hire me</button>
             </div>
-        </div>
-        <div class="profile-container">
-            <div class="profile-wrapper">
-                <img src="images/Portrait.JPG" alt="Priyanshu" class="profile-image">
-                <div class="profile-background"></div>
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-icon github">GitHub</a>
-                <a href="#" class="social-icon linkedin">LinkedIn</a>
-                <a href="#" class="social-icon artstation">ArtStation</a>
-            </div>
-        </div>
-    </header>
-    <div class="animate_projects_1">
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/1sammple.jpg" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/2sammple.jpg" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/3sammple.jpg" alt=""></div>
-    </div>
-    <div class="animate_projects_2">
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/_0033.png" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/Preview3.png" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/Preview_4.png" alt=""></div>
-    </div>
-    <div class="animate_projects_3">
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/wallpaper.jpg" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/sample.png" alt=""></div>
-        <div class="animate_projects_items"><img src="/Portfolio-Page/images/temple.png" alt=""></div>
-    </div>
-    <section class="container">
-        <h2 class="header">My features</h2>
-        <div class="features">
-            <div class="card">
-                <h4>Engineer</h4>
-                <p>
-                    I may become a software engineer so beware of your secure applications.
-                </p>
-                <a href="#">Donate</a>
-            </div>
-            <div class="card">
-                <h4>CG Artist</h4>
-                <p>
-                    I may also become a CG Artist and make NSFW art in blender so beware of that when you are about to open my profile in your workplace.
-                </p>
-                <a href="#">Donate</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="container gallery-section">
-        <h2 class="header">My Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/0087.jpg" alt="Gallery Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="images/1st.png" alt="Gallery Image 2">
-            </div>
-            <div class="gallery-item">
-                <img src="images/evil.png" alt="Gallery Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="images/glass.png" alt="Glass Render">
-            </div>
-            <div class="gallery-item">
-                <img src="images/infinity.png" alt="Infinity Scene">
-            </div>
-            <div class="gallery-item">
-                <img src="images/Mirrir_selfie_scene.png" alt="Mirror Selfie Scene">
-            </div>
-            <div class="gallery-item">
-                <img src="images/PortSceneIanHUBERT(11).png" alt="Port Scene">
-            </div>
-            <div class="gallery-item">
-                <img src="images/Preview3.png" alt="Preview 3">
-            </div>
-            <div class="gallery-item">
-                <img src="images/Preview_4.png" alt="Preview 4">
-            </div>
-            <div class="gallery-item">
-                <img src="images/ship.png" alt="Ship Scene">
-            </div>
-            <div class="gallery-item">
-                <img src="images/temple.png" alt="Temple Scene">
-            </div>
-            <div class="gallery-item">
-                <img src="images/untitled.jpg" alt="Untitled Scene">
-            </div>
-        </div>
-        <div class="image-strip-container">
-            <div class="image-strip">
-                <!-- First strip -->
-                <img src="images/2nd.png" alt="Scene 2">
-                <img src="images/untitled.jpg" alt="Untitled Scene">
-                <img src="images/wallpaper.jpg" alt="Wallpaper">
-                <img src="images/1sammple.jpg" alt="Sample 1">
-                <img src="images/2sammple.jpg" alt="Sample 2">
-                <!-- Duplicate for seamless loop -->
-                <img src="images/2nd.png" alt="Scene 2">
-                <img src="images/untitled.jpg" alt="Untitled Scene">
-                <img src="images/wallpaper.jpg" alt="Wallpaper">
-                <img src="images/1sammple.jpg" alt="Sample 1">
-                <img src="images/2sammple.jpg" alt="Sample 2">
-            </div>
-        </div>
+        </nav>
         
-        <div class="image-strip-container">
-            <div class="image-strip reverse">
-                <!-- Second strip -->
-                <img src="images/3sammple.jpg" alt="Sample 3">
-                <img src="images/_0033.png" alt="Scene 0033">
-                <img src="images/infinity.png" alt="Infinity Scene">
-                <img src="images/Mirrir_selfie_scene.png" alt="Mirror Selfie">
-                <img src="images/ship.png" alt="Ship Scene">
-                <!-- Duplicate for seamless loop -->
-                <img src="images/3sammple.jpg" alt="Sample 3">
-                <img src="images/_0033.png" alt="Scene 0033">
-                <img src="images/infinity.png" alt="Infinity Scene">
-                <img src="images/Mirrir_selfie_scene.png" alt="Mirror Selfie">
-                <img src="images/ship.png" alt="Ship Scene">
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="header">PROJECT PRICING PLANS</h2>
-        <p class="sub-header">My project plans comes in varios membership tiers, each tailored to cater to different project types</p>
-        <div class="pricing">
-            <div class="card">
-                <div class="content">
-                    <h4>Basic plan</h4>
-                    <h3>Rs 0/-</h3>
-                    <p>
-                        For Friends and Family only
-                    </p>
-                    <p>
-                        Will Provide source file as needed
-                    </p>
+        <main>
+            <section class="hero">
+                <div class="container header-container">
+                    <div class="content">
+                        <div class="text-content">
+                            <h1 class="glitch-text">Hello World_</h1>
+                            <h2 class="dynamic-text">I'm <span class="highlight">Priyanshu</span></h2>
+                            <div class="typing-text">
+                                <span class="text first-text">A</span>
+                                <span class="text sec-text">Software Engineer</span>
+                            </div>
+                            <p class="bio">
+                                Crafting digital experiences through code and creativity. 
+                                Specializing in 3D art and software development, I transform ideas into 
+                                visually stunning and technically sophisticated solutions.
+                            </p>
+                            <div class="cta-buttons">
+                                <button class="btn primary">View Projects</button>
+                                <button class="btn secondary">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile-wrapper">
+                            <img src="images/Portrait.JPG" alt="Priyanshu" class="profile-image">
+                            <div class="profile-background"></div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-icon github">GitHub</a>
+                            <a href="#" class="social-icon linkedin">LinkedIn</a>
+                            <a href="#" class="social-icon artstation">ArtStation</a>
+                        </div>
+                    </div>
                 </div>
-                <button class="btn">Join now</button>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h4>Gold plan</h4>
-                    <h3>Rs 600~</h3>
-                    <p>
-                        Single shot, Single camera, Stationary shot
-                    </p>
-                    <p>
-                        Little or no moving parts
-                    </p>
+            </section>
+
+            <section class="features-section">
+                <div class="container">
+                    <h2 class="header">My Features</h2>
+                    <div class="features">
+                        <div class="card">
+                            <h4>Engineer</h4>
+                            <p>
+                                I may become a software engineer so beware of your secure applications.
+                            </p>
+                            <a href="#">Donate</a>
+                        </div>
+                        <div class="card">
+                            <h4>CG Artist</h4>
+                            <p>
+                                I may also become a CG Artist and make NSFW art in blender so beware of that when you are about to open my profile in your workplace.
+                            </p>
+                            <a href="#">Donate</a>
+                        </div>
+                    </div>
                 </div>
-                <button class="btn">Join now</button>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h4>Basic plan</h3>
-                    <h3>Rs 1500~</h3>
-                    <p>
-                        Multiple shots
-                    </p>
-                    <p>
-                        Multiple Camera angles
-                    </p> 
-                    <p>
-                        Moving parts
-                    </p>
+            </section>
+            
+            <section class="gallery-section">
+                <div class="container">
+                    <h2 class="header">My Gallery</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="images/0087.jpg" loading="lazy" alt="Gallery Image 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/1st.png" loading="lazy" alt="Gallery Image 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/evil.png" loading="lazy" alt="Gallery Image 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/glass.png" loading="lazy" alt="Glass Render">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/infinity.png" loading="lazy" alt="Infinity Scene">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Mirrir_selfie_scene.png" loading="lazy" alt="Mirror Selfie Scene">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/PortSceneIanHUBERT(11).png" loading="lazy" alt="Port Scene">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Preview3.png" loading="lazy" alt="Preview 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Preview_4.png" loading="lazy" alt="Preview 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/ship.png" loading="lazy" alt="Ship Scene">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/temple.png" loading="lazy" alt="Temple Scene">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/untitled.jpg" loading="lazy" alt="Untitled Scene">
+                        </div>
+                    </div>
+                    <div class="image-strip-container">
+                        <div class="image-strip">
+                            <!-- First strip -->
+                            <img src="images/2nd.png" loading="lazy" alt="Scene 2">
+                            <img src="images/untitled.jpg" loading="lazy" alt="Untitled Scene">
+                            <img src="images/wallpaper.jpg" loading="lazy" alt="Wallpaper">
+                            <img src="images/1sammple.jpg" loading="lazy" alt="Sample 1">
+                            <img src="images/2sammple.jpg" loading="lazy" alt="Sample 2">
+                            <!-- Duplicate for seamless loop -->
+                            <img src="images/2nd.png" loading="lazy" alt="Scene 2">
+                            <img src="images/untitled.jpg" loading="lazy" alt="Untitled Scene">
+                            <img src="images/wallpaper.jpg" loading="lazy" alt="Wallpaper">
+                            <img src="images/1sammple.jpg" loading="lazy" alt="Sample 1">
+                            <img src="images/2sammple.jpg" loading="lazy" alt="Sample 2">
+                        </div>
+                    </div>
+                    
+                    <div class="image-strip-container">
+                        <div class="image-strip reverse">
+                            <!-- Second strip -->
+                            <img src="images/3sammple.jpg" loading="lazy" alt="Sample 3">
+                            <img src="images/_0033.png" loading="lazy" alt="Scene 0033">
+                            <img src="images/infinity.png" loading="lazy" alt="Infinity Scene">
+                            <img src="images/Mirrir_selfie_scene.png" loading="lazy" alt="Mirror Selfie">
+                            <img src="images/ship.png" loading="lazy" alt="Ship Scene">
+                            <!-- Duplicate for seamless loop -->
+                            <img src="images/3sammple.jpg" loading="lazy" alt="Sample 3">
+                            <img src="images/_0033.png" loading="lazy" alt="Scene 0033">
+                            <img src="images/infinity.png" loading="lazy" alt="Infinity Scene">
+                            <img src="images/Mirrir_selfie_scene.png" loading="lazy" alt="Mirror Selfie">
+                            <img src="images/ship.png" loading="lazy" alt="Ship Scene">
+                        </div>
+                    </div>
                 </div>
-                <button class="btn">Join now</button>
-            </div>
-        </div>
-    </section>
-
-    <footer class="container">
-        <span class="blur-1"></span>
-        <span class="blur-2"></span>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="logo">
-                    <img src="images/logo_image.jpg" alt="Logo">
-                    <h3>Priyanshu's Portfolio</h3>
+            </section>
+        
+            <section class="pricing-section">
+                <div class="container">
+                    <h2 class="header">PROJECT PRICING PLANS</h2>
+                    <p class="sub-header">My project plans comes in varios membership tiers, each tailored to cater to different project types</p>
+                    <div class="pricing">
+                        <div class="card">
+                            <div class="content">
+                                <h4>Basic plan</h4>
+                                <h3>Rs 0/-</h3>
+                                <p>
+                                    For Friends and Family only
+                                </p>
+                                <p>
+                                    Will Provide source file as needed
+                                </p>
+                            </div>
+                            <button class="btn">Join now</button>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <h4>Gold plan</h4>
+                                <h3>Rs 600~</h3>
+                                <p>
+                                    Single shot, Single camera, Stationary shot
+                                </p>
+                                <p>
+                                    Little or no moving parts
+                                </p>
+                            </div>
+                            <button class="btn">Join now</button>
+                        </div>
+                        <div class="card">
+                            <div class="content">
+                                <h4>Basic plan</h3>
+                                <h3>Rs 1500~</h3>
+                                <p>
+                                    Multiple shots
+                                </p>
+                                <p>
+                                    Multiple Camera angles
+                                </p> 
+                                <p>
+                                    Moving parts
+                                </p>
+                            </div>
+                            <button class="btn">Join now</button>
+                        </div>
+                    </div>
                 </div>
-                <p class="footer-description">
-                    Creating digital art and software solutions with passion and precision.
-                    Let's bring your ideas to life through code and creativity.
-                </p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#features">Services</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <ul class="contact-info">
-                    <li><i class="fas fa-envelope"></i> priyanshuhoney2002@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +91 888XXXXXXX</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Connect With Me</h4>
-                <div class="socials">
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.artstation.com/yourusername" target="_blank"><i class="fab fa-artstation"></i></a>
-                    <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <span class="blur-1"></span>
+                <span class="blur-2"></span>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="logo">
+                            <img src="images/logo_image.jpg" alt="Logo">
+                            <h3>Priyanshu's Portfolio</h3>
+                        </div>
+                        <p class="footer-description">
+                            Creating digital art and software solutions with passion and precision.
+                            Let's bring your ideas to life through code and creativity.
+                        </p>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#features">Services</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> priyanshuhoney2002@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +91 888XXXXXXX</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h4>Connect With Me</h4>
+                        <div class="socials">
+                            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.artstation.com/yourusername" target="_blank"><i class="fab fa-artstation"></i></a>
+                            <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">Copyright © 2023 Priyanshu's Portfolio. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">Copyright © 2023 Priyanshu's Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

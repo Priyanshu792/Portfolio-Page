@@ -5,12 +5,130 @@
     --bg-color: #0d0d0d;
     --card-bg: rgba(0, 0, 0, 0.8);
     --card-hover: rgba(50, 0, 50, 0.8);
+    --max-width: 1200px;
+    --grid-gap: 2rem;
+    --section-padding: 4rem;
+    --container-padding: 2rem;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: url('images/cyberpunk-pattern.png');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout structure */
+.page-wrapper {
+    display: grid;
+    grid-template-columns: [full-start] minmax(var(--container-padding), 1fr) 
+                          [content-start] minmax(0, var(--max-width)) 
+                          [content-end] minmax(var(--container-padding), 1fr) [full-end];
+    gap: 0;
+    min-height: 100vh;
+}
+
+.page-wrapper > * {
+    grid-column: full-start / full-end;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--grid-gap);
+}
+
+/* Section styling */
+section {
+    display: grid;
+    grid-template-columns: inherit;
+    padding: var(--section-padding) 0;
+}
+
+.container {
+    grid-column: content-start / content-end;
+    width: 100%;
+    padding: 0 var(--container-padding);
+}
+
+/* Features section */
+.features-section {
+    background: var(--card-bg);
+    padding: 4rem 0;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--grid-gap);
+}
+
+/* Gallery section */
+.gallery-section {
+    background: var(--card-bg);
+    padding: 4rem 0;
+    margin: 4rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--grid-gap);
+    grid-auto-flow: dense;
+}
+
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: inherit;
+    background: var(--card-bg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--grid-gap);
 }
 
 /* Optimize performance with hardware acceleration */
 * {
-    padding: 0;
-    margin: 0;
     outline: none;
     border: none;
     box-sizing: border-box;
@@ -19,6 +137,11 @@
     transform-style: preserve-3d;
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
 }
 
 img {
@@ -31,29 +154,27 @@ a {
 }
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #0d0d0d;
     margin: 0;
-    color: #e0e0e0;
+    background-color: #0d0d0d;
     background-image: url('images/cyberpunk-pattern.png'); /* Add a cyberpunk background pattern */
     background-size: cover;
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;
+    position: relative;
+    height: 100vh;
+    min-height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-nav {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-logo {
@@ -102,17 +223,6 @@ nav {
     background-color: #ff1493;
 }
 
-.container {
-    max-width: 1200px;
-    max-height: 1000px;
-    margin: auto;
-    padding: 5rem 2rem;
-    min-height: auto;
-    max-height: none;
-    height: auto;
-    padding: 4rem 2rem;
-}
-
 .blur {
     position: absolute;
     box-shadow: 0 0 1000px 50px #ff00ff;
@@ -127,6 +237,7 @@ header {
     align-items: center;
     gap: 2rem;
     justify-items: right;
+    margin-bottom: 4rem;
 }
 
 header .content h4 {
@@ -181,13 +292,6 @@ section .header {
     font-weight: 600;
 }
 
-.features {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
 .features .card {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem;
@@ -231,10 +335,19 @@ section .header {
 }
 
 .pricing {
-    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--grid-gap);
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding: 2rem;
+    transform: none;
+    position: relative;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pricing .card {
@@ -294,16 +407,6 @@ section .header {
 .pricing .card button:hover {
     background-color: #ff1493;
     border-color: #ff1493;
-}
-
-footer {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
 }
 
 footer .blur-1 {
@@ -524,6 +627,20 @@ footer .column > a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .header-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-inner {
+        grid-template-columns: auto 1fr;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+
 .behance_projects {
     display: grid;
     padding: 40px;
@@ -535,28 +652,23 @@ footer .column > a:hover {
 }
 
 .gallery-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    padding: 4rem 0;
+    width: 100%;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 4rem; /* Add space after gallery section */
-    background: rgba(0, 0, 0, 0.3);
-    min-height: auto; /* Override the min-height from container */
-    max-height: none; /* Override the max-height from container */
+    margin: 4rem 0;
     background: var(--card-bg);
-    overflow: hidden;
+    padding: 2rem 0;
+    transform: none;
+    left: auto;
 }
 
 .gallery {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 0 2rem; /* Add horizontal padding */
-    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .gallery-item {
@@ -807,4 +919,238 @@ footer .column > a:hover {
     .cta-buttons {
         justify-content: center;
     }
+}
+
+/* Custom Cursor */
+.cursor,
+.cursor-blur {
+    display: none;
+}
+
+/* Scroll Progress Bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    z-index: 1001;
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+/* Loading Animation */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.loader-content {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll-triggered animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced hover effects */
+.card, .gallery-item, .btn {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover, .gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(255, 0, 255, 0.2);
+}
+
+/* Fix container and section visibility */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Remove problematic transforms and positioning */
+.gallery-section,
+.features,
+.pricing {
+    transform: none;
+    position: relative;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fix header container spacing */
+.header-section {
+    min-height: calc(100vh - 80px); /* Account for nav height */
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    margin-bottom: 0;
+}
+
+.header-container {
+    min-height: auto;
+    padding: 2rem 0;
+}
+
+/* Fix features section */
+.features-section {
+    background: var(--card-bg);
+    padding: 4rem 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.features {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Fix section spacing */
+section {
+    padding: 4rem 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Container adjustments */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Fix main content spacing */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+/* Adjust CTA buttons */
+.cta-buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    white-space: nowrap;
+}
+
+/* Fix section spacing and gaps */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+section {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.features-section {
+    padding: 4rem 0;
+    background: var(--card-bg);
+}
+
+.gallery-section {
+    padding: 4rem 0;
+    background: var(--card-bg);
+    margin: 0;
+}
+
+.pricing-section {
+    padding: 4rem 0;
+    background: var(--card-bg);
+}
+
+/* Fix container spacing */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Fix gallery spacing */
+.gallery {
+    width: 100%;
+    padding: 2rem 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Fix header margins */
+section .header {
+    margin: 0 0 2rem 0;
+    padding-top: 2rem;
+}
+
+/* Ensure sections are flush against each other */
+.features,
+.gallery,
+.pricing {
+    margin: 0;
 }
