@@ -39,12 +39,23 @@ header h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+
+    width: 100%; /* Set fixed width */
+    height: 0; /* Set initial height to 0 */
+    /* padding-bottom: 56.25%; 16:9 aspect ratio (9 / 16 * 100) */
+    padding-bottom: 100%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    position: relative; /* Needed for absolutely positioned elements */
+    
 }
 
-.gallery-item img,
-.gallery-item video {
+.gallery-item img,.gallery-item video {
     width: 100%;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+
 }
 
 .gallery-item video {
